@@ -1,7 +1,5 @@
 # :ledger: AppQ
- AppQ es una aplicación móvil(Android), para informar en tiempo real el estado del aire en la ciudad de Bogota.
-
-
+ AppQ es una aplicación Android, para informar en tiempo real el estado del aire en la ciudad de Bogotá.
 
 <summary><h2> :writing_hand: Mockups</h2></summary>
   Los siguientes mockups grafican la estructura general de la aplicación movil.
@@ -9,7 +7,8 @@
   <a href="https://drive.google.com/drive/folders/1JcAxzEOtizZlqvRVrt8o_hmRWf-uFJGG?usp=sharing">Mockpup</a>
 
 <summary><h2> 🛠️ Configuracion del proyecto</h2></summary>
- Debido que este proyecto está desarrollado en [React Native](https://reactnative.dev/), para realizar ediciones a este repositorio se debe tener instaladas las siguientes dependencias: 
+
+ Debido a que este proyecto está desarrollado en [React Native](https://reactnative.dev/), para realizar ediciones a este repositorio se debe tener instaladas las siguientes dependencias: 
 
  * [**Node**](https://nodejs.org/en/)
  * [**Java Development Kit**](https://www.oracle.com/java/technologies/javase-jdk8-downloads.html)
@@ -31,7 +30,7 @@ Pasos para ejecutar desde un dispositivo seguir los siguientes pasos: [Ejecutar 
     git clone https://github.com/anlramirezs11/appQ
 ```
 
-* Inicializar el Metro Bundler en una tarminal.
+* Inicializar ***Metro Bundler*** en la tarminal.
 ```shell
      cd appQ
 ```
@@ -49,23 +48,14 @@ Pasos para ejecutar desde un dispositivo seguir los siguientes pasos: [Ejecutar 
     npx react-native run-android
 ```
 
+***Nota*** si el proyecto se va a ejecutar en un dispositivo movil se deben dar permisos para la instalación.
 
 
 
-
-
-<summary><h2> :pick: Dependencias Utilizadas</h2></summary>
-
-  - **Nebular 4** (https://github.com/akveo/nebular) 
-  - **Angular 8**
-  - **Bootstrap 4** 
-
-  ### API MID
-  - Evaluacion MID . [Repositorio](https://github.com/udistrital/evaluacion_mid)
+<summary><h2> :pick: Appis Asociadas</h2></summary>
   
-  ### API CRUD
-  
-   - Evaluacion CRUD . [Repositorio](https://github.com/udistrital/evaluacion_crud)
+  ### API para appQ
+  [AppQAPI](https://github.com/YuelWolf/AppQAPI)
  
-  ### Herramientas usadas
-  - **ngx-admin:** este [template](https://github.com/akveo/ngx-admin) es el que utiliza ngxGenerator, esta basado en Angular 8+, Bootstrap 4 y Nebular.
+  ### Scrapper para appQ
+  [Scrapper](https://github.com/YuelWolf/AppQScrapper): Scrapper para obtener los datos de polucción de Bogotá.
