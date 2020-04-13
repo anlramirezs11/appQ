@@ -21,7 +21,7 @@
 
 Para configurar el entorno de desarrollo seguir los pasos de la [Documentación Oficial](https://reactnative.dev/docs/environment-setup), teniendo en cuenta el sistema operativo en el que se desarrolla e ingresando a la sección ***React Native CLI Quickstart***.
 
-Pasos para ejecutar desde un dispositivo seguir los siguientes pasos: [Ejecutar en un dispositivo](https://reactnative.dev/docs/running-on-device).
+Para ejecutar desde un dispositivo seguir los siguientes pasos: [Ejecutar en un dispositivo](https://reactnative.dev/docs/running-on-device).
 
 ### **Pasos para Ejecutar**
 
@@ -48,7 +48,7 @@ Pasos para ejecutar desde un dispositivo seguir los siguientes pasos: [Ejecutar 
     npx react-native run-android
 ```
 
-***Nota*** si el proyecto se va a ejecutar en un dispositivo movil se deben dar permisos para la instalación.
+***Nota*** si el proyecto se va a correr en un dispositivo movil se deben dar permisos para la instalación la primera vez que se ejecuta.
 
 
 
