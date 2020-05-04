@@ -26,6 +26,10 @@ const styles = StyleSheet.create({
         backgroundColor: '#1e5a5a',
         padding: 5,
         flexDirection: 'row',
+        position: 'absolute',
+        left: 0,
+        right: 0,
+        top: 0,
     },
 
     icons: {
