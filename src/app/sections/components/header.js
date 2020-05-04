@@ -23,7 +23,6 @@ function Header(props) {
 
 const styles = StyleSheet.create({
     Header: {
-        backgroundColor: '#1e5a5a',
         padding: 5,
         flexDirection: 'row',
         position: 'absolute',

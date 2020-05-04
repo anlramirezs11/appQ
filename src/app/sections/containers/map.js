@@ -23,15 +23,19 @@ class Map extends Component {
 const styles = StyleSheet.create({
     map: {
         width: '100%',
-        height: 300,
-        backgroundColor: '#ff0000',
+        height: 270,
+        backgroundColor: '#ff0000'
     },
     title:{
         textAlign: 'center' ,
         fontWeight: 'bold',
-        fontSize: 30,
+        fontSize: 28,
         color: '#ffffff',
-        marginBottom: 40,
+        marginTop: 50,
+        marginBottom: 35,
+        fontFamily: 'Roboto',
+        letterSpacing: 3,
+        textTransform: 'uppercase'
     }
 });
 

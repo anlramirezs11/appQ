@@ -26,7 +26,7 @@ import Notification from './src/app/sections/containers/notification'
 const App: () => React$Node = () => {
   return (
     <Main>
-      <ImageBackground source={require('./assets/image/background-main.png')} style={styles.image}>
+      <ImageBackground source={require('./src/assets/image/background-main.png')} style={styles.image}>
         <Header />
         <Map />
         <Notification/>
