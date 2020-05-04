@@ -14,13 +14,13 @@ import {
 } from 'react-native';
 
 // Screens
-import Main from './src/screens/containers/main'
+import Main from './src/app/screens/containers/main'
 
 //Componentes
-import Header from './src/sections/components/header'
-import Footer from './src/sections/components/footer'
-import Map from './src/sections/containers/map'
-import Notification from './src/sections/containers/notification'
+import Header from './src/app/sections/components/header'
+import Footer from './src/app/sections/components/footer'
+import Map from './src/app/sections/containers/map'
+import Notification from './src/app/sections/containers/notification'
 
 
 const App: () => React$Node = () => {
