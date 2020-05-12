@@ -15,7 +15,7 @@ function Header(props) {
     return (
         <View style={styles.Header}>
             <TouchableOpacity onPress={() => Alert.alert('Acción Atras')}>
-                <Image source={require('../../../assets/image/back.png')} style={styles.icons} />
+                <Image source={require('../../assets/image/back.png')} style={styles.icons} />
             </TouchableOpacity>
         </View>
     )

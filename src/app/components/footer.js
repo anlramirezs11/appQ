@@ -15,13 +15,13 @@ function Footer(props) {
     return (
         <SafeAreaView style={styles.footer}>
             <TouchableOpacity onPress={() => Alert.alert('Acción Descargar')}>
-                <Image source={require('../../../assets/image/descargar.png')} style={styles.icons} />
+                <Image source={require('../../assets/image/descargar.png')} style={styles.icons} />
             </TouchableOpacity>
             <TouchableOpacity onPress={() => Alert.alert('Acción Ir mapa')}>
-                <Image source={require('../../../assets/image/mapa.png')} style={styles.mainIcon} />
+                <Image source={require('../../assets/image/mapa.png')} style={styles.mainIcon} />
             </TouchableOpacity>
             <TouchableOpacity onPress={() => Alert.alert('Acción Ir Perfil')}>
-                <Image source={require('../../../assets/image/perfil.png')} style={styles.icons} />
+                <Image source={require('../../assets/image/perfil.png')} style={styles.icons} />
             </TouchableOpacity>
         </SafeAreaView >
     )
