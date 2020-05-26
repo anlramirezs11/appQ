@@ -1,5 +1,5 @@
-import react, {Component} from 'react';
-import {ImageBackground, Text, StyleSheet} from 'react-native';
+import React, {Component} from 'react';
+import {ImageBackground, StyleSheet} from 'react-native';
 
 //Componentes
 import Header from './components/header';
@@ -12,7 +12,7 @@ class AppLayout extends Component {
     return (
       <Main>
         <ImageBackground
-          source={require('./assets/image/background-main.png')}
+          source={require('../assets/image/background-main.png')}
           style={styles.image}>
           <Header />
           <Map />
