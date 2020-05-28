@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import {View, StyleSheet, Text, Image} from 'react-native';
-import MapView, {Marker, Callout} from 'react-native-maps';
+import {View, StyleSheet, Text} from 'react-native';
+import MapView, {Marker} from 'react-native-maps';
 const data = require('../../assets/data/motoringEstation.json');
 
 class Map extends Component {
