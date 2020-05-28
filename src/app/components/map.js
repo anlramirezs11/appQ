@@ -98,6 +98,16 @@ class Map extends Component {
       },
     ],
   };
+  selectColorMarker(marker) {
+    if (marker.pollutionLevel >= 9) {
+      return 'purple';
+    } else if (marker.pollutionLevel >= 6 && marker.pollutionLevel < 9) {
+      return 'tomato';
+    } else if (marker.pollutionLevel >= 3 && marker.pollutionLevel < 6) {
+      return 'gold';
+    }
+    return 'green';
+  }
 
   render() {
     return (
@@ -107,42 +117,24 @@ class Map extends Component {
           <MapView
             style={styles.map}
             region={{
-              latitude: 4.6097102,
-              longitude: -74.081749,
-              latitudeDelta: 0.015,
-              longitudeDelta: 0.0121,
-            }}>
-            {this.state.motoringNetwork.map((maker, index) => (
+              latitude: 4.6997102,
+              longitude: -74.091749,
+              latitudeDelta: 0.2,
+              longitudeDelta: 0.3,
+            }}
+            showsTraffic={true}>
+            {this.state.motoringNetwork.map((marker, index) => (
               <Marker
                 draggable
                 coordinate={{
-                  latitude: maker.latitude,
-                  longitude: maker.longitude,
+                  latitude: marker.latitude,
+                  longitude: marker.longitude,
                 }}
-                title={maker.name}
-                description={maker.description}
-                key={index}>
-                {maker.pollutionLevel >= 9 && (
-                  <Image
-                    source={require('../../assets/image/icon-marker-bad.png')}
-                  />
-                )}
-                {maker.pollutionLevel >= 6 && maker.pollutionLevel < 9 && (
-                  <Image
-                    source={require('../../assets/image/icon-marker-danger.png')}
-                  />
-                )}
-                {maker.pollutionLevel >= 3 && maker.pollutionLevel < 6 && (
-                  <Image
-                    source={require('../../assets/image/icon-marker-regular.png')}
-                  />
-                )}
-                {maker.pollutionLevel >= 0 && maker.pollutionLevel < 3 && (
-                  <Image
-                    source={require('../../assets/image/icon-marker.png')}
-                  />
-                )}
-              </Marker>
+                title={marker.name}
+                description={marker.description}
+                key={index}
+                pinColor={this.selectColorMarker(marker)}
+              />
             ))}
           </MapView>
         </View>
