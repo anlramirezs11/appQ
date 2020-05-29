@@ -10,9 +10,10 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@react-native-community/geolocation": "^2.0.2",
     "react": "16.11.0",
     "react-native": "0.62.2",
-    "react-native-maps": "git+https://github.com/react-native-community/react-native-maps.git",
+    "react-native-maps": "https://github.com/react-native-community/react-native-maps.git",
     "react-redux": "^7.2.0",
     "redux": "^4.0.5"
   },

@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {View, StyleSheet, Text} from 'react-native';
 import MapView, {Marker} from 'react-native-maps';
+import Geolocation from '@react-native-community/geolocation';
+
 const data = require('../../assets/data/motoringEstation.json');
 
 class Map extends Component {
@@ -15,6 +17,12 @@ class Map extends Component {
     }
     return 'green';
   }
+  locateCurrentPosition = () => {
+    Geolocation.getCurrentPosition(position =>
+      console.log(JSON.stringify(position)),
+    );
+  };
+
   render() {
     this.state = data;
     return (
