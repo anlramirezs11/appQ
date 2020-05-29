@@ -5,7 +5,6 @@ const data = require('../../assets/data/motoringEstation.json');
 
 class Map extends Component {
   state = {};
-
   selectColorMarker(marker) {
     if (marker.pollutionLevel >= 9) {
       return 'purple';
@@ -16,7 +15,6 @@ class Map extends Component {
     }
     return 'green';
   }
-
   render() {
     this.state = data;
     return (
