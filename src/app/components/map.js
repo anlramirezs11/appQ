@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-import {View, StyleSheet, Text} from 'react-native';
+import {View, StyleSheet, Text, Alert} from 'react-native';
 import MapView, {Marker} from 'react-native-maps';
 import Geolocation from '@react-native-community/geolocation';
+import {request, PERMISSIONS} from 'react-native-permissions';
 
 const data = require('../../assets/data/motoringEstation.json');
 
@@ -17,12 +18,29 @@ class Map extends Component {
     }
     return 'green';
   }
+  componentDidMount() {
+    this.requestLocationPermission();
+  }
+  requestLocationPermission = async () => {
+    var response = await request(PERMISSIONS.ANDROID.ACCESS_FINE_LOCATION);
+    if (response === 'granted') {
+      this.locateCurrentPosition();
+    }
+  };
   locateCurrentPosition = () => {
-    Geolocation.getCurrentPosition(position =>
-      console.log(JSON.stringify(position)),
+    Geolocation.getCurrentPosition(
+      position => {
+        this.state.initialPosition = {
+          latitude: position.coords.latitude,
+          longitude: position.coords.longitude,
+          latitudeDelta: 0.2,
+          longitudeDelta: 0.3,
+        };
+      },
+      error => Alert.alert(error.message),
+      {enableHighAccuracy: true, timeout: 10000, maximumAge: 1000},
     );
   };
-
   render() {
     this.state = data;
     return (
@@ -31,13 +49,13 @@ class Map extends Component {
         <View style={styles.map}>
           <MapView
             style={styles.map}
-            region={{
-              latitude: 4.6997102,
-              longitude: -74.091749,
-              latitudeDelta: 0.2,
-              longitudeDelta: 0.3,
-            }}
-            showsTraffic={true}>
+            ref={map => (this._map = map)}
+            showsUserLocation={true}
+            followsUserLocation={true}
+            userLocationFastestInterval={500}
+            initialRegion={this.state.initialPosition}
+            showsTraffic={true}
+            loadingBackgroundColor="#1e5a5a">
             {this.state.motoringNetwork &&
               this.state.motoringNetwork.map((marker, index) => (
                 <Marker
