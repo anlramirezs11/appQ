@@ -18,14 +18,14 @@
 ```shell
      npm install -g react-native-cli
 ```
+Para configurar el entorno de desarrollo seguir los pasos de la [Documentación Oficial](https://reactnative.dev/docs/environment-setup), teniendo en cuenta el sistema operativo en el que se desarrolla e ingresando a la sección ***React Native CLI Quickstart***.
+
+Para ejecutar desde un dispositivo seguir los siguientes pasos: [Ejecutar en un dispositivo](https://reactnative.dev/docs/running-on-device).
+
 
 ### 🛠️ Librerías
 * [**react-native-maps**](https://github.com/react-native-community/react-native-maps)
 
-
-Para configurar el entorno de desarrollo seguir los pasos de la [Documentación Oficial](https://reactnative.dev/docs/environment-setup), teniendo en cuenta el sistema operativo en el que se desarrolla e ingresando a la sección ***React Native CLI Quickstart***.
-
-Para ejecutar desde un dispositivo seguir los siguientes pasos: [Ejecutar en un dispositivo](https://reactnative.dev/docs/running-on-device).
 
 ### **Pasos para Ejecutar**
 
