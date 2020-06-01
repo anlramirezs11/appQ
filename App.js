@@ -7,7 +7,6 @@
  */
 
 import React from 'react';
-// Screens
 import AppLayout from './src/app/app';
 
 const App: () => React$Node = () => {
