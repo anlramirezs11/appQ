@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
-import {TextInput, Button, Paragraph} from 'react-native-paper';
+import {TextInput, Button} from 'react-native-paper';
 
 class FormSingUp extends React.Component {
   state = {
