@@ -1,13 +1,11 @@
 import React, {Component} from 'react';
-import {View, StyleSheet, Text, Alert} from 'react-native';
+import {View, StyleSheet, Text} from 'react-native';
 import MapView, {Marker} from 'react-native-maps';
-import Geolocation from '@react-native-community/geolocation';
-import {request, PERMISSIONS} from 'react-native-permissions';
+import {connect} from 'react-redux';
 
 const data = require('../../assets/data/motoringEstation.json');
 
 class Map extends Component {
-  state = {};
   selectColorMarker(marker) {
     if (marker.pollutionLevel >= 9) {
       return 'purple';
@@ -19,28 +17,14 @@ class Map extends Component {
     return 'green';
   }
   componentDidMount() {
-    this.requestLocationPermission();
+    this.state.initialPosition = {
+      latitude: 4.5923067,
+      longitude: -74.08083333333333,
+      latitudeDelta: 0.2,
+      longitudeDelta: 0.3,
+    };
   }
-  requestLocationPermission = async () => {
-    var response = await request(PERMISSIONS.ANDROID.ACCESS_FINE_LOCATION);
-    if (response === 'granted') {
-      this.locateCurrentPosition();
-    }
-  };
-  locateCurrentPosition = () => {
-    Geolocation.getCurrentPosition(
-      position => {
-        this.state.initialPosition = {
-          latitude: position.coords.latitude,
-          longitude: position.coords.longitude,
-          latitudeDelta: 0.2,
-          longitudeDelta: 0.3,
-        };
-      },
-      error => Alert.alert(error.message),
-      {enableHighAccuracy: true, timeout: 10000, maximumAge: 1000},
-    );
-  };
+
   render() {
     this.state = data;
     return (
@@ -94,5 +78,10 @@ const styles = StyleSheet.create({
     textTransform: 'uppercase',
   },
 });
+const mapStateToProps = state => {
+  return {
+    location: state.initalState.location,
+  };
+};
 
-export default Map;
+export default connect(mapStateToProps)(Map);

@@ -8,7 +8,6 @@
 
 import React from 'react';
 import AppLayout from './src/app/app';
-
 const App: () => React$Node = () => {
   return <AppLayout />;
 };
