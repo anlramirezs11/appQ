@@ -9,7 +9,8 @@ import InitialView from './containers/initialView';
 import {Provider} from 'react-redux';
 import {createStore} from 'redux';
 import reducer from './reducers';
-import initialState from '../../initialState.json';
+import initialState from '../assets/data/initialState.json';
+import motoringNetwork from '../assets/data/motoringEstation.json';
 import Geolocation from '@react-native-community/geolocation';
 import {request, PERMISSIONS} from 'react-native-permissions';
 
@@ -17,6 +18,10 @@ const store = createStore(reducer, initialState);
 class AppLayout extends Component {
   componentDidMount() {
     this.requestLocationPermission();
+    store.dispatch({
+      type: 'SET_STATION_LOCATIONS',
+      payload: motoringNetwork,
+    });
   }
   requestLocationPermission = async () => {
     var response = await request(PERMISSIONS.ANDROID.ACCESS_FINE_LOCATION);

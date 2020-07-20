@@ -16,17 +16,15 @@ class Map extends Component {
     }
     return 'green';
   }
-  componentDidMount() {
+
+  render() {
+    this.state = data;
     this.state.initialPosition = {
-      latitude: 4.5923067,
+      latitude: 4.70309,
       longitude: -74.08083333333333,
       latitudeDelta: 0.2,
       longitudeDelta: 0.3,
     };
-  }
-
-  render() {
-    this.state = data;
     return (
       <View>
         <Text style={styles.title}>Mapa de Bogotá</Text>

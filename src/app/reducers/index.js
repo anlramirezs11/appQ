@@ -1,8 +1,10 @@
 const reducer = (state = {}, action) => {
   switch (action.type) {
     case 'SET_USER_LOCATION': {
-      const newState = {...state, userLocation: action.payload};
-      return newState;
+      return {...state, userLocation: action.payload};
+    }
+    case 'SET_STATION_LOCATIONS': {
+      return {...state, ...action.payloagitd};
     }
   }
   return state;
