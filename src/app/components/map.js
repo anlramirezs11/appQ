@@ -3,11 +3,11 @@ import {View, StyleSheet, Text, Alert} from 'react-native';
 import MapView, {Marker} from 'react-native-maps';
 import Geolocation from '@react-native-community/geolocation';
 import {request, PERMISSIONS} from 'react-native-permissions';
+import {connect} from 'react-redux';
 
 const data = require('../../assets/data/motoringEstation.json');
 
 class Map extends Component {
-  state = {};
   selectColorMarker(marker) {
     if (marker.pollutionLevel >= 9) {
       return 'purple';
@@ -94,5 +94,10 @@ const styles = StyleSheet.create({
     textTransform: 'uppercase',
   },
 });
+const mapStateToProps = state => {
+  return {
+    location: state.initalState.location,
+  };
+};
 
-export default Map;
+export default connect(mapStateToProps)(Map);

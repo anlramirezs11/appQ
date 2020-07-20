@@ -1,0 +1,12 @@
+{
+  "initalState": {
+    "location": [
+      {
+        "latitude": 4.5923067,
+        "longitude": -74.08083333333333,
+        "latitudeDelta": 0.2,
+        "longitudeDelta": 0.3
+      }
+    ]
+  }
+}
