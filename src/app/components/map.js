@@ -3,8 +3,12 @@ import {View, StyleSheet, Text} from 'react-native';
 import MapView, {Marker} from 'react-native-maps';
 import {connect} from 'react-redux';
 
-const data = require('../../assets/data/motoringEstation.json');
-
+const mapStateToProps = state => {
+  return {
+    initalLocation: state.initalState,
+    stationLocations: state.motoringNetwork,
+  };
+};
 class Map extends Component {
   selectColorMarker(marker) {
     if (marker.pollutionLevel >= 9) {
@@ -18,13 +22,6 @@ class Map extends Component {
   }
 
   render() {
-    this.state = data;
-    this.state.initialPosition = {
-      latitude: 4.70309,
-      longitude: -74.08083333333333,
-      latitudeDelta: 0.2,
-      longitudeDelta: 0.3,
-    };
     return (
       <View>
         <Text style={styles.title}>Mapa de Bogotá</Text>
@@ -35,11 +32,11 @@ class Map extends Component {
             showsUserLocation={true}
             followsUserLocation={true}
             userLocationFastestInterval={500}
-            initialRegion={this.state.initialPosition}
+            initialRegion={this.props.initalLocation}
             showsTraffic={true}
             loadingBackgroundColor="#1e5a5a">
-            {this.state.motoringNetwork &&
-              this.state.motoringNetwork.map((marker, index) => (
+            {this.props.stationLocations &&
+              this.props.stationLocations.map((marker, index) => (
                 <Marker
                   draggable
                   coordinate={{
@@ -76,10 +73,5 @@ const styles = StyleSheet.create({
     textTransform: 'uppercase',
   },
 });
-const mapStateToProps = state => {
-  return {
-    location: state.initalState.location,
-  };
-};
 
 export default connect(mapStateToProps)(Map);

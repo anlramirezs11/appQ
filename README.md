@@ -34,7 +34,7 @@ Para ejecutar desde un dispositivo seguir los siguientes pasos: [Ejecutar en un 
     git clone https://github.com/anlramirezs11/appQ
 ```
 
-* Inicializar ***Metro Bundler*** en la tarminal.
+* Inicializar ***Metro Bundler*** en la terminal.
 ```shell
      cd appQ
 ```

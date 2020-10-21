@@ -4,10 +4,11 @@ const reducer = (state = {}, action) => {
       return {...state, userLocation: action.payload};
     }
     case 'SET_STATION_LOCATIONS': {
-      return {...state, ...action.payloagitd};
+      return {...state, ...action.payload};
     }
+    default:
+      return state;
   }
-  return state;
 };
 
 export default reducer;
